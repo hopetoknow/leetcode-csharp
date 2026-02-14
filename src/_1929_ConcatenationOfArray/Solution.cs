@@ -14,4 +14,17 @@ public class Solution
 
         return ans;
     }
+    
+    public int[] GetConcatenation2(int[] nums)
+    {
+        var n = nums.Length;
+        var ans = new int[n << 1];
+
+        for (var i = 0; i < n << 1; i++)
+        {
+            ans[i] = nums[i % n];
+        }
+
+        return ans;
+    }
 }
