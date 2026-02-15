@@ -27,4 +27,9 @@ public class Solution
 
         return ans;
     }
+    
+    public int[] GetConcatenation3(int[] nums)
+    {
+        return nums.Concat(nums).ToArray();
+    }
 }
