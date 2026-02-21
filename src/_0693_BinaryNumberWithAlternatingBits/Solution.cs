@@ -22,4 +22,19 @@ public class Solution
 
         return true;
     }
+    
+    public bool HasAlternatingBits2(int n)
+    {
+        string binary = Convert.ToString(n, 2);
+
+        for (int i = 1; i < binary.Length; i++)
+        {
+            if (binary[i] == binary[i - 1])
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
 }
