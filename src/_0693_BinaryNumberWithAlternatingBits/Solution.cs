@@ -37,4 +37,25 @@ public class Solution
 
         return true;
     }
+    
+    public bool HasAlternatingBits3(int n)
+    {
+        int previousBit = n % 2;
+        n /= 2;
+
+        while (n > 0)
+        {
+            int currentBit = n % 2;
+
+            if (previousBit == currentBit)
+            {
+                return false;
+            }
+
+            previousBit = currentBit;
+            n /= 2;
+        }
+
+        return true;
+    }
 }
