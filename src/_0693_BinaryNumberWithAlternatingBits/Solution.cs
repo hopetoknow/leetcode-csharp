@@ -82,6 +82,26 @@ public class Solution
     
     public bool HasAlternatingBits5(int n)
     {
+        int previousBit = -1;
+
+        while (n != 0)
+        {
+            int currentBit = n & 1;
+
+            if (previousBit == currentBit)
+            {
+                return false;
+            }
+
+            previousBit = currentBit;
+            n >>= 1;
+        }
+
+        return true;
+    }
+    
+    public bool HasAlternatingBits6(int n)
+    {
         int x = n ^ (n >> 1);
         return (x & (x + 1)) == 0;
     }
