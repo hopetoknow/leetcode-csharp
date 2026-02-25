@@ -105,4 +105,10 @@ public class Solution
         int x = n ^ (n >> 1);
         return (x & (x + 1)) == 0;
     }
+    
+    public bool HasAlternatingBits7(int n)
+    {
+        int x = n + (n >> 1);
+        return (x & (x + 1)) == 0;
+    }
 }
