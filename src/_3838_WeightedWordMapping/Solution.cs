@@ -22,4 +22,9 @@ public class Solution
 
         return ans.ToString();
     }
+    
+    public string MapWordWeights2(string[] words, int[] weights) =>
+        new string(words
+            .Select(word => (char)('z' - word.Sum(c => weights[c - 'a']) % 26))
+            .ToArray());
 }
