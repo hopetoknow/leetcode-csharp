@@ -21,4 +21,16 @@ public class Solution
 
         return new string(chars.ToArray());;
     }
+    
+    public string TrimTrailingVowels2(string s)
+    {
+        var i = s.Length - 1;
+
+        while (i >= 0 && "aeiou".Contains(s[i]))
+        {
+            i--;
+        }
+
+        return s.Substring(0, i + 1);
+    }
 }
