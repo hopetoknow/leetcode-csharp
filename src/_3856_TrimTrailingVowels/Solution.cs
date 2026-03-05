@@ -31,6 +31,9 @@ public class Solution
             i--;
         }
 
-        return s.Substring(0, i + 1);
+        return s[..(i + 1)];
+        // return s.Substring(0, i + 1);
     }
+    
+    public string TrimTrailingVowels3(string s) => s.TrimEnd('a', 'e', 'i', 'o', 'u');
 }
