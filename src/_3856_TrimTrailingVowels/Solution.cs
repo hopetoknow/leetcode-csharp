@@ -36,4 +36,16 @@ public class Solution
     }
     
     public string TrimTrailingVowels3(string s) => s.TrimEnd('a', 'e', 'i', 'o', 'u');
+    
+    public string TrimTrailingVowels4(string s)
+    {
+        ReadOnlySpan<char> span = s.AsSpan();
+
+        while (span.Length > 0 && "aeiou".Contains(span[^1]))
+        {
+            span = span[..^1];
+        }
+            
+        return span.ToString();
+    }
 }
