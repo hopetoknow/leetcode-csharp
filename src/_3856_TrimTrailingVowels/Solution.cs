@@ -1,3 +1,5 @@
+using System.Text.RegularExpressions;
+
 namespace _3856_TrimTrailingVowels;
 
 public class Solution
@@ -48,4 +50,6 @@ public class Solution
             
         return span.ToString();
     }
+    
+    public string TrimTrailingVowels5(string s) => Regex.Replace(s, "[aeiou]+$", "");
 }
