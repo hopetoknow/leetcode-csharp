@@ -52,4 +52,11 @@ public class Solution
     }
     
     public string TrimTrailingVowels5(string s) => Regex.Replace(s, "[aeiou]+$", "");
+    
+    public string TrimTrailingVowels6(string s)
+    {
+        var vowels = new HashSet<char> { 'a', 'e', 'i', 'o', 'u' };
+
+        return new string(s.Reverse().SkipWhile(e => vowels.Contains(e)).Reverse().ToArray());
+    }
 }
