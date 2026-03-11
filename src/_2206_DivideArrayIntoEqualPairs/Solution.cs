@@ -22,5 +22,18 @@ public class Solution
         return true;
     }
     
-    
+    public bool DivideArray2(int[] nums)
+    {
+        var seen = new HashSet<int>();
+
+        foreach (int num in nums)
+        {
+            if (!seen.Add(num))
+            {
+                seen.Remove(num);
+            }
+        }
+
+        return seen.Count == 0;
+    }
 }
