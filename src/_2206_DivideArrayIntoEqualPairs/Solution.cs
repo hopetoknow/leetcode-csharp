@@ -36,4 +36,24 @@ public class Solution
 
         return seen.Count == 0;
     }
+    
+    public bool DivideArray3(int[] nums)
+    {
+        var frequencies = new int[501];
+
+        foreach (int num in nums)
+        {
+            frequencies[num]++;
+        }
+
+        foreach (int frequency in frequencies)
+        {
+            if (frequency % 2 != 0)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
 }
