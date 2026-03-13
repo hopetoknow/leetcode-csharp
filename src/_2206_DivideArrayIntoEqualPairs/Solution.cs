@@ -56,4 +56,6 @@ public class Solution
 
         return true;
     }
+    
+    public bool DivideArray4(int[] nums) => nums.GroupBy(n => n).All(g => g.Count() % 2 == 0);
 }
