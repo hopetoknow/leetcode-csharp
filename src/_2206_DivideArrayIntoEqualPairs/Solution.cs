@@ -58,4 +58,19 @@ public class Solution
     }
     
     public bool DivideArray4(int[] nums) => nums.GroupBy(n => n).All(g => g.Count() % 2 == 0);
+    
+    public bool DivideArray5(int[] nums)
+    {
+        Array.Sort(nums);
+
+        for (var i = 1; i < nums.Length; i += 2)
+        {
+            if (nums[i] != nums[i - 1])
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
 }
