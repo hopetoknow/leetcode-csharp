@@ -73,4 +73,31 @@ public class Solution
 
         return true;
     }
+    
+    public bool DivideArray6(int[] nums)
+    {
+        var maxNum = 0;
+
+        foreach (int num in nums)
+        {
+            maxNum = Math.Max(num, maxNum);
+        }
+
+        var seen = new bool[maxNum + 1];
+
+        foreach (int num in nums)
+        {
+            seen[num] = !seen[num];
+        }
+
+        foreach (int num in nums)
+        {
+            if (seen[num])
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
 }
