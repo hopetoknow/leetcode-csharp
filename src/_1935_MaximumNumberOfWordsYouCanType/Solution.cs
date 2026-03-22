@@ -22,4 +22,12 @@ public class Solution
 
         return ans;
     }
+    
+    public int CanBeTypedWords2(string text, string brokenLetters)
+    {
+        var brokenLettersSet = new HashSet<char>(brokenLetters);
+        return text.Split(' ').Count(word => !word.Any(letter => brokenLettersSet.Contains(letter)));
+        
+        //return text.Split(' ').Count(word => !word.Any(letter => brokenLetters.Contains(letter)));
+    }
 }
