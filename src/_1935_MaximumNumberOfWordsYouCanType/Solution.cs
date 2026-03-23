@@ -30,4 +30,9 @@ public class Solution
         
         //return text.Split(' ').Count(word => !word.Any(letter => brokenLetters.Contains(letter)));
     }
-}
+    
+    public int CanBeTypedWords3(string text, string brokenLetters)
+    {
+        return text.Split(' ').Count(word => !word.Intersect(brokenLetters).Any());
+    }
+} 
