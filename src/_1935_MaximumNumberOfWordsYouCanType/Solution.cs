@@ -29,10 +29,44 @@ public class Solution
         return text.Split(' ').Count(word => !word.Any(letter => brokenLettersSet.Contains(letter)));
         
         //return text.Split(' ').Count(word => !word.Any(letter => brokenLetters.Contains(letter)));
-    }
+    }   
     
     public int CanBeTypedWords3(string text, string brokenLetters)
     {
         return text.Split(' ').Count(word => !word.Intersect(brokenLetters).Any());
     }
-} 
+    
+    public int CanBeTypedWords4(string text, string brokenLetters)
+    {
+        var brokenLettersArr = new bool[26];
+
+        foreach (char c in brokenLetters)
+        {
+            brokenLettersArr[c - 'a'] = true;
+        }
+
+        int count = 0;
+        
+        foreach (var word in text.Split(' '))
+        {
+            bool typeable = true;
+            
+            foreach (char c in word)
+            {
+                if (brokenLettersArr[c - 'a'])
+                {
+                    typeable = false; 
+                    break;
+                }
+            }
+
+            if (typeable)
+            {
+                count++;
+            }
+                
+        }
+        
+        return count;
+    }
+}
