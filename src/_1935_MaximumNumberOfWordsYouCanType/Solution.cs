@@ -63,8 +63,35 @@ public class Solution
             if (typeable)
             {
                 count++;
+            } 
+        }
+        
+        return count;
+    }
+    
+    public int CanBeTypedWords5(string text, string brokenLetters)
+    {
+        var brokenLettersArr = new bool[26];
+
+        foreach (char c in brokenLetters)
+        {
+            brokenLettersArr[c - 'a'] = true;
+        }
+
+        int count = 0;
+        
+        foreach (var word in text.Split(' '))
+        {
+            foreach (char c in word)
+            {
+                if (brokenLettersArr[c - 'a'])
+                {
+                    count--; 
+                    break;
+                }
             }
-                
+            
+            count++;
         }
         
         return count;
