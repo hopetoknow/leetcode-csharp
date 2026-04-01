@@ -34,7 +34,12 @@ public class Solution
         while (x < n) {
             x = x * 2 + 1;
         }
-        
         return x;
+    }
+    
+    public int SmallestNumber4(int n)
+    {
+        int bits = (int)Math.Log2(n) + 1;
+        return (1 << bits) - 1;
     }
 }
