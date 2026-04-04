@@ -1,3 +1,5 @@
+using System.Text;
+
 namespace _3823_ReverseLettersThenSpecialCharactersInAString;
 
 public class Solution
@@ -32,5 +34,40 @@ public class Solution
             i++;
             j--;
         }
+    }
+    
+    public string ReverseByType2(string s)
+    {
+        var letters = new StringBuilder();
+        var nonLetters = new StringBuilder();
+        var chars = s.ToCharArray();
+
+        foreach (char ch in chars)
+        {
+            if (char.IsLetter(ch))
+            {
+                letters.Append(ch);
+            }
+            else
+            {
+                nonLetters.Append(ch);
+            }
+        }
+
+        int j = letters.Length, k = nonLetters.Length;
+
+        for (int i = 0; i < chars.Length; i++)
+        {
+            if (char.IsLetter(chars[i]))
+            {
+                chars[i] = letters[--j];
+            }
+            else
+            {
+                chars[i] = nonLetters[--k];
+            }
+        }
+
+        return new string(chars);
     }
 }
