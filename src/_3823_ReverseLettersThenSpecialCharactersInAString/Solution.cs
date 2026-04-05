@@ -70,4 +70,33 @@ public class Solution
 
         return new string(chars);
     }
+    
+    public string ReverseByType3(string s)
+    {
+        var letters = new Stack<char>();
+        var nonLetters = new Stack<char>();
+    
+        foreach (var ch in s)
+        {
+            if (char.IsLetter(ch))
+            {
+                letters.Push(ch);
+            }
+            else
+            {
+                nonLetters.Push(ch);
+            }
+        }
+    
+        var result = new char[s.Length];
+    
+        for (int i = 0; i < s.Length; i++)
+        {
+            result[i] = char.IsLetter(s[i]) 
+                ? letters.Pop() 
+                : nonLetters.Pop();
+        }
+    
+        return new string(result);
+    }
 }
