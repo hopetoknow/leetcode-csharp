@@ -14,4 +14,40 @@ public class Solution
         Array.Sort(nums);
         return nums[n / 2];
     }
+    
+    public int FindNonMinOrMax2(int[] nums)
+    {
+        int n = nums.Length;
+
+        if (n <= 2)
+        {
+            return -1;
+        }
+
+        int min = 101;
+        int max = 0;
+
+        foreach (int num in nums)
+        {
+            if (num < min)
+            {
+                min = num;
+            }
+
+            if (num > max)
+            {
+                max = num;
+            }
+        }
+
+        foreach (int num in nums)
+        {
+            if (num != max && num != min)
+            {
+                return num;
+            }
+        }
+
+        return -1;
+    }
 }
