@@ -50,4 +50,17 @@ public class Solution
 
         return -1;
     }
+    
+    public int FindNonMinOrMax3(int[] nums)
+    {
+        if (nums.Length <= 2)
+        {
+            return -1;
+        }
+        
+        int min = nums.Min();
+        int max = nums.Max();
+        
+        return nums.First(n => n != min && n != max);
+    }
 }
