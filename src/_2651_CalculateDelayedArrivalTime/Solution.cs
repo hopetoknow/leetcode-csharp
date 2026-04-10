@@ -63,4 +63,19 @@ public class Solution
         
         return nums.First(n => n != min && n != max);
     }
+    
+    public int FindNonMinOrMax4(int[] nums)
+    {
+        int n = nums.Length;
+
+        if (n <= 2)
+        {
+            return -1;
+        }
+
+        int[] first3 = nums[..3];
+        Array.Sort(first3);
+        
+        return first3[1];
+    }
 }
