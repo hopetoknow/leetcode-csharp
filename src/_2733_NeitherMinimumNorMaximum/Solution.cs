@@ -1,4 +1,4 @@
-namespace _2651_CalculateDelayedArrivalTime;
+namespace _2733_NeitherMinimumNorMaximum;
 
 public class Solution
 {
@@ -78,4 +78,5 @@ public class Solution
         
         return first3[1];
     }
+    
 }
