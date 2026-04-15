@@ -20,4 +20,34 @@ public class Solution
 
         return count;
     }
+    
+    public int CountKDifference2(int[] nums, int k)
+    {
+        var frequencyByNumber = new Dictionary<int, int>();
+        int count = 0;
+
+        foreach (int num in nums)
+        {
+            if (frequencyByNumber.ContainsKey(num - k))
+            {
+                count += frequencyByNumber[num - k];
+            }
+
+            if (frequencyByNumber.ContainsKey(num + k))
+            {
+                count += frequencyByNumber[num + k];
+            }
+
+            if (frequencyByNumber.ContainsKey(num))
+            {
+                frequencyByNumber[num]++;
+            }
+            else
+            {
+                frequencyByNumber[num] = 1;
+            }
+        }
+
+        return count;
+    }
 }
