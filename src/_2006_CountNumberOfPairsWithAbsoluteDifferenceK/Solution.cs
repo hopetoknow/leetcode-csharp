@@ -38,14 +38,31 @@ public class Solution
                 count += frequencyByNumber[num + k];
             }
 
-            if (frequencyByNumber.ContainsKey(num))
+            if (frequencyByNumber.TryGetValue(num, out int value))
             {
-                frequencyByNumber[num]++;
+                frequencyByNumber[num] = ++value;
             }
             else
             {
                 frequencyByNumber[num] = 1;
             }
+        }
+
+        return count;
+    }
+    
+    public int CountKDifference3(int[] nums, int k)
+    {
+        var frequencyByNumber = new Dictionary<int, int>();
+        int count = 0;
+
+        foreach (int num in nums)
+        {
+            frequencyByNumber.TryGetValue(num - k, out int below);
+            frequencyByNumber.TryGetValue(num + k, out int above);
+            count += below + above;
+
+            frequencyByNumber[num] = frequencyByNumber.GetValueOrDefault(num) + 1;
         }
 
         return count;
