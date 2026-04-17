@@ -67,4 +67,26 @@ public class Solution
 
         return count;
     }
+    
+    public int CountKDifference4(int[] nums, int k)
+    {
+        int[] frequencies = new int[101];
+        int count = 0;
+
+        foreach (int num in nums)
+        {
+            if (num >= k) {
+                count += frequencies[num - k];                
+            }
+            
+            if (num + k <= 100) 
+            {
+                count += frequencies[num + k];
+            }
+            
+            frequencies[num]++;
+        }
+
+        return count;
+    }
 }
