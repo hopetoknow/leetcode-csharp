@@ -17,4 +17,6 @@ public class Solution
 
         return ans;
     }
+
+    public int[] FindDegrees2(int[][] matrix) => matrix.Select(row => row.Sum()).ToArray();
 }
