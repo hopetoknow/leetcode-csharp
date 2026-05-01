@@ -13,4 +13,10 @@ public class Solution
 
         return new HashSet<int>(frequencyByNumber.Values).Count == frequencyByNumber.Values.Count;
     }
+
+    public bool UniqueOccurrences2(int[] arr)
+    {
+        var frequencies = arr.GroupBy(x => x).Select(g => g.Count()).ToList();
+        return frequencies.Distinct().Count() == frequencies.Count;
+    }
 }
