@@ -28,4 +28,18 @@ public class Solution
 
         return widestArea;
     }
+
+    public int MaxWidthOfVerticalArea2(int[][] points)
+    {
+        var xs = points.Select(p => p[0]).OrderBy(x => x).ToArray();
+
+        int widestArea = 0;
+
+        for (int i = 1; i < points.Length; i++)
+        {
+            widestArea = Math.Max(widestArea, xs[i] - xs[i - 1]);
+        }
+
+        return widestArea;
+    }
 }
