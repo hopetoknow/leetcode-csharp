@@ -15,4 +15,6 @@ public class Solution
 
         return ans;
     }
+
+    public int[] ConcatWithReverse2(int[] nums) => nums.Concat(nums.Reverse()).ToArray();
 }
