@@ -31,4 +31,17 @@ public class Solution
 
         return ans;
     }
+    
+    public int[] ConcatWithReverse4(int[] nums)
+    {
+        int n = nums.Length;
+        var ans = new int[2 * n];
+
+        for (var i = 0; i < 2 * n; i++)
+        {
+            ans[i] = i < n ? nums[i] : nums[2 * n - i - 1];
+        }
+
+        return ans;
+    }
 }
