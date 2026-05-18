@@ -6,11 +6,6 @@ public class Solution
     {
         int n = nums.Length;
 
-        if (n < 2)
-        {
-            return false;
-        }
-
         Array.Sort(nums);
 
         for (var i = 0; i < n - 1; i++)
@@ -22,5 +17,27 @@ public class Solution
         }
 
         return nums[n - 1] == n - 1;
+    }
+
+    public bool IsGood2(int[] nums)
+    {
+        var frequencyByNumber = new Dictionary<int, int>();
+
+        foreach (int num in nums)
+        {
+            frequencyByNumber[num] = frequencyByNumber.GetValueOrDefault(num) + 1;
+        }
+
+        int n = nums.Length;
+
+        for (var i = 1; i < n - 1; i++)
+        {
+            if (!frequencyByNumber.ContainsKey(i))
+            {
+                return false;
+            }
+        }
+
+        return frequencyByNumber.ContainsKey(n - 1) && frequencyByNumber[n - 1] == 2;
     }
 }
