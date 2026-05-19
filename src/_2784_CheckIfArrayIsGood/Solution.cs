@@ -40,4 +40,26 @@ public class Solution
 
         return frequencyByNumber.ContainsKey(n - 1) && frequencyByNumber[n - 1] == 2;
     }
+
+    public bool IsGood3(int[] nums)
+    {
+        var frequencies = new int[201];
+
+        foreach (int num in nums)
+        {
+            frequencies[num]++;
+        }
+
+        int n = nums.Length;
+
+        for (var i = 1; i < n - 1; i++)
+        {
+            if (frequencies[i] != 1)
+            {
+                return false;
+            }
+        }
+
+        return frequencies[n - 1] == 2;
+    }
 }
