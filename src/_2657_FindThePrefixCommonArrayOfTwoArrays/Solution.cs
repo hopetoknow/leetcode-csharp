@@ -67,18 +67,42 @@ public class Solution
 
         for (var i = 0; i < n; i++)
         {
-            frequencies[A[i]]++;
-
-            if (frequencies[A[i]] == 2)
+            if (++frequencies[A[i]] == 2)
             {
                 commonCount++;
             }
 
-            frequencies[B[i]]++;
-
-            if (frequencies[B[i]] == 2)
+            if (++frequencies[B[i]] == 2)
             {
                 commonCount++;
+            }
+
+            prefixCommonArray[i] = commonCount;
+        }
+
+        return prefixCommonArray;
+    }
+
+    public int[] FindThePrefixCommonArray4(int[] A, int[] B)
+    {
+        int n = A.Length;
+        var seenA = new HashSet<int>();
+        var seenB = new HashSet<int>();
+        var prefixCommonArray = new int[n];
+
+        for (var i = 0; i < n; i++)
+        {
+            seenA.Add(A[i]);
+            seenB.Add(B[i]);
+
+            int commonCount = 0;
+
+            foreach (int num in seenA)
+            {
+                if (seenB.Contains(num))
+                {
+                    commonCount++;
+                }
             }
 
             prefixCommonArray[i] = commonCount;
