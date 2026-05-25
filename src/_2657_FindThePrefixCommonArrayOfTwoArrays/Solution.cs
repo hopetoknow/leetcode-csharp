@@ -110,4 +110,34 @@ public class Solution
 
         return prefixCommonArray;
     }
+
+    public int[] FindThePrefixCommonArray5(int[] A, int[] B)
+    {
+        int n = A.Length;
+        var seenA = new HashSet<int>();
+        var seenB = new HashSet<int>();
+        int commonCount = 0;
+        var prefixCommonArray = new int[n];
+
+        for (var i = 0; i < n; i++)
+        {
+            seenA.Add(A[i]);
+
+            if (seenB.Contains(A[i]))
+            {
+                commonCount++;
+            }
+
+            seenB.Add(B[i]);
+
+            if (seenA.Contains(B[i]))
+            {
+                commonCount++;
+            }
+
+            prefixCommonArray[i] = commonCount;
+        }
+
+        return prefixCommonArray;
+    }
 }
