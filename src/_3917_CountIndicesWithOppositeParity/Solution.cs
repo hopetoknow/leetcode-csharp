@@ -25,4 +25,34 @@ public class Solution
 
         return answer;
     }
+
+    public int[] CountOppositeParity2(int[] nums)
+    {
+        int n = nums.Length;
+        var parities = new int[n];
+
+        for (int i = 0; i < n; i++)
+        {
+            parities[i] = nums[i] % 2;
+        }
+
+        var answer = new int[n];
+
+        for (int i = 0; i < n - 1; i++)
+        {
+            int score = 0;
+
+            for (int j = i + 1; j < n; j++)
+            {
+                if (parities[i] != parities[j])
+                {
+                    score++;
+                }
+            }
+
+            answer[i] = score;
+        }
+
+        return answer;
+    }
 }
