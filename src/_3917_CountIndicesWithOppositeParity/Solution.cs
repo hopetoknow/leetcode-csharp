@@ -55,4 +55,28 @@ public class Solution
 
         return answer;
     }
+
+    public int[] CountOppositeParity3(int[] nums)
+    {
+        int n = nums.Length;
+        int evenCount = 0;
+        int oddCount = 0;
+        var answer = new int[n];
+
+        for (int i = n - 2; i >= 0; i--)
+        {
+            if (nums[i + 1] % 2 == 0)
+            {
+                evenCount++;
+            }
+            else
+            {
+                oddCount++;
+            }
+
+            answer[i] = nums[i] % 2 == 0 ? oddCount : evenCount;
+        }
+
+        return answer;
+    }
 }
