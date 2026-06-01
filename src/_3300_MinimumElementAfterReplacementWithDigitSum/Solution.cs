@@ -22,4 +22,6 @@ public class Solution
 
         return min;
     }
+
+    public int MinElement2(int[] nums) => nums.Select(num => num.ToString().Sum(c => c - '0')).Min();
 }
