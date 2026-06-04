@@ -14,4 +14,6 @@ public class Solution
 
         return score;
     }
+
+    public int DigitFrequencyScore2(int n) => n.ToString().Sum(c => c - '0');
 }
