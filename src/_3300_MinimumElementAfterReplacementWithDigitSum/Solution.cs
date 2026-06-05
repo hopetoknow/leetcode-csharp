@@ -17,6 +17,12 @@ public class Solution
                 n /= 10;
             }
 
+            // while (n > 0)
+            // {                
+            //     (n, int rem) = Math.DivRem(n, 10);
+            //     digitSum += rem;
+            // }
+
             min = int.Min(min, digitSum);
         }
 
@@ -24,4 +30,6 @@ public class Solution
     }
 
     public int MinElement2(int[] nums) => nums.Select(num => num.ToString().Sum(c => c - '0')).Min();
+
+    public int MinElement3(int[] nums) => nums.Min(num => num.ToString().Sum(c => c - '0'));
 }

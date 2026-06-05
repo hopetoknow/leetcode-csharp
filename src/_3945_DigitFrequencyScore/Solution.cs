@@ -12,6 +12,12 @@ public class Solution
             n /= 10;
         }
 
+        // while (n > 0)
+        // {
+        //     (n, int rem) = Math.DivRem(n, 10);
+        //     score += rem;
+        // }
+
         return score;
     }
 
