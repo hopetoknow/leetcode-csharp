@@ -16,4 +16,13 @@ public class Solution
 
         return -1;
     }
+
+    public int FirstMatchingIndex2(string s)
+    {
+        int n = s.Length;
+
+        return Enumerable.Range(0, (n + 1) / 2)
+            .Select(i => (int?)i)
+            .FirstOrDefault(i => s[i!.Value] == s[n - i.Value - 1]) ?? -1;
+    }
 }
