@@ -25,4 +25,12 @@ public class Solution
             .Select(i => (int?)i)
             .FirstOrDefault(i => s[i!.Value] == s[n - i.Value - 1]) ?? -1;
     }
+
+    public int FirstMatchingIndex3(string s)
+    {
+        int n = s.Length;
+
+        return Enumerable.Range(0, (n + 1) / 2)
+            .FirstOrDefault(i => s[i] == s[n - i - 1], -1);
+    }
 }
