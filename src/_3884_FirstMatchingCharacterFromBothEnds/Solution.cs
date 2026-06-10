@@ -33,4 +33,23 @@ public class Solution
         return Enumerable.Range(0, (n + 1) / 2)
             .FirstOrDefault(i => s[i] == s[n - i - 1], -1);
     }
+
+    public int FirstMatchingIndex4(string s)
+    {
+        int left = 0;
+        int right = s.Length - 1;
+
+        while (left <= right)
+        {
+            if (s[left] == s[right])
+            {
+                return left;
+            }
+
+            left++;
+            right--;
+        }
+
+        return -1;
+    }
 }
