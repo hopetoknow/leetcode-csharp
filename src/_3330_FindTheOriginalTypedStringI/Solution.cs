@@ -16,4 +16,20 @@ public class Solution
 
         return count;
     }
+    
+    public int PossibleStringCount2(string word)
+    {
+        int n = word.Length;
+        int count = n;
+
+        for (int i = 1; i < n; i++)
+        {
+            if (word[i] != word[i - 1])
+            {
+                count--;
+            }
+        }
+
+        return count;
+    }
 }
