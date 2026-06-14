@@ -16,7 +16,7 @@ public class Solution
 
         return count;
     }
-    
+
     public int PossibleStringCount2(string word)
     {
         int n = word.Length;
@@ -31,5 +31,11 @@ public class Solution
         }
 
         return count;
+    }
+
+    public int PossibleStringCount3(string word)
+    {
+        return 1 + Enumerable.Range(1, word.Length - 1)
+            .Count(i => word[i] == word[i - 1]);
     }
 }
