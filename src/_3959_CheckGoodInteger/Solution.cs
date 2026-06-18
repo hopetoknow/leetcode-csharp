@@ -16,4 +16,18 @@ public class Solution
 
         return squareSum - digitSum >= 50;
     }
+
+    public bool CheckGoodInteger2(int n)
+    {
+        int digitSum = 0, squareSum = 0;
+
+        foreach (char c in n.ToString())
+        {
+            int digit = c - '0';
+            digitSum += digit;
+            squareSum += digit * digit;
+        }
+
+        return squareSum - digitSum >= 50;
+    }
 }
