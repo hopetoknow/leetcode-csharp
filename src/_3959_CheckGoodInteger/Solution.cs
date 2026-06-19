@@ -30,4 +30,11 @@ public class Solution
 
         return squareSum - digitSum >= 50;
     }
+
+    public bool CheckGoodInteger3(int n)
+    {
+        var digits = n.ToString().Select(c => c - '0');
+
+        return digits.Sum(d => d * d) - digits.Sum(d => d) >= 50;
+    }
 }
