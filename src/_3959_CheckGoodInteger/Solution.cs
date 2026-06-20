@@ -37,4 +37,18 @@ public class Solution
 
         return digits.Sum(d => d * d) - digits.Sum(d => d) >= 50;
     }
+
+    public bool CheckGoodInteger4(int n)
+    {
+        int sum = 0;
+
+        while (n > 0)
+        {
+            int digit = n % 10;
+            sum += digit * (digit - 1);
+            n /= 10;
+        }
+
+        return sum >= 50;
+    }
 }
