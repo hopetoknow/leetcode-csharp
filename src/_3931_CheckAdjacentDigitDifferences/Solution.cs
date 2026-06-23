@@ -14,4 +14,8 @@ public class Solution
 
         return true;
     }
+    
+    public bool IsAdjacentDiffAtMostTwo2(string s) {
+        return Enumerable.Range(0, s.Length - 1).All(i => Math.Abs(s[i] - s[i + 1]) <= 2);
+    }
 }
