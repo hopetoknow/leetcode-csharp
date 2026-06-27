@@ -29,4 +29,30 @@ public class Solution
 
         return [score, counter];
     }
+
+    public int[] ScoreValidator2(string[] events)
+    {
+        int score = 0, counter = 0;
+
+        foreach (string e in events)
+        {
+            if (int.TryParse(e, out int value))
+            {
+                score += value;
+            }
+            else if (e == "W")
+            {
+                if (++counter == 10)
+                {
+                    break;
+                }
+            }
+            else
+            {
+                score++;
+            }
+        }
+
+        return [score, counter];
+    }
 }
