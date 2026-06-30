@@ -18,4 +18,9 @@ public class Solution
 
         return long.Parse(sb.ToString());
     }
+
+    public long RemoveZeros2(long n)
+    {
+        return long.Parse(n.ToString().Replace("0", ""));
+    }
 }
