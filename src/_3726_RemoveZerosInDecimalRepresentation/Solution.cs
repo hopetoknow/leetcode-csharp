@@ -23,4 +23,9 @@ public class Solution
     {
         return long.Parse(n.ToString().Replace("0", ""));
     }
+
+    public long RemoveZeros3(long n)
+    {
+        return long.Parse(n.ToString().Where(c => c != '0').ToArray());
+    }
 }
