@@ -26,4 +26,22 @@ public class Solution
 
         return [pairs, leftovers];
     }
+
+    public int[] NumberOfPairs2(int[] nums)
+    {
+        var frequencyByNumber = new Dictionary<int, int>();
+        int pairs = 0;
+
+        foreach (int num in nums)
+        {
+            int count = frequencyByNumber[num] = frequencyByNumber.GetValueOrDefault(num, 0) + 1;
+
+            if (count % 2 == 0)
+            {
+                pairs++;
+            }
+        }
+
+        return [pairs, nums.Length - pairs * 2];
+    }
 }
