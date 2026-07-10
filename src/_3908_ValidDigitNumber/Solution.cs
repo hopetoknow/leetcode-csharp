@@ -28,4 +28,26 @@ public class Solution
 
         return containsX;
     }
+
+    public bool ValidDigit2(int n, int x)
+    {
+        if (n < 10)
+        {
+            return false;
+        }
+
+        bool containsX = false;
+
+        while (n >= 10)
+        {
+            if (n % 10 == x)
+            {
+                containsX = true;
+            }
+
+            n /= 10;
+        }
+
+        return containsX && n != x;
+    }
 }
