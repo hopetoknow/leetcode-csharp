@@ -50,4 +50,17 @@ public class Solution
 
         return containsX && n != x;
     }
+
+    public bool ValidDigit3(int n, int x)
+    {
+        bool containsX = false;
+
+        while (n > 9)
+        {
+            containsX = containsX || n % 10 == x;
+            n /= 10;
+        }
+
+        return containsX && n != x;
+    }
 }
