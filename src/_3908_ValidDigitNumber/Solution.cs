@@ -9,7 +9,7 @@ public class Solution
             return false;
         }
 
-        bool containsX = false;
+        var containsX = false;
 
         while (n > 0)
         {
@@ -36,7 +36,7 @@ public class Solution
             return false;
         }
 
-        bool containsX = false;
+        var containsX = false;
 
         while (n >= 10)
         {
@@ -53,7 +53,7 @@ public class Solution
 
     public bool ValidDigit3(int n, int x)
     {
-        bool containsX = false;
+        var containsX = false;
 
         while (n > 9)
         {
@@ -62,5 +62,13 @@ public class Solution
         }
 
         return containsX && n != x;
+    }
+
+    public bool ValidDigit4(int n, int x)
+    {
+        var s = n.ToString();
+        var digit = x.ToString();
+
+        return s.Contains(digit) && !s.StartsWith(digit);
     }
 }
