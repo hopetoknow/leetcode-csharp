@@ -71,4 +71,10 @@ public class Solution
 
         return s.Contains(digit) && !s.StartsWith(digit);
     }
+
+    public bool ValidDigit5(int n, int x)
+    {
+        var s = n.ToString();
+        return s.Skip(1).Any(c => c - '0' == x) && s[0] - '0' != x;
+    }
 }
