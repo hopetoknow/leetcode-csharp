@@ -14,4 +14,12 @@ public class Solution
 
         return (column % 2) != (row % 2);
     }
+
+    public bool SquareIsWhite3(string coordinates)
+    {
+        int column = coordinates[0] - 'a';
+        int row = coordinates[1] - '1';
+
+        return ((column ^ row) & 1) == 1;
+    }
 }
