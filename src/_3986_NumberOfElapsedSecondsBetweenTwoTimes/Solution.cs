@@ -15,4 +15,12 @@ public class Solution
 
         return h * 3600 + m * 60 + s;
     }
+
+    public int SecondsBetweenTimes2(string startTime, string endTime)
+    {
+        TimeSpan start = TimeSpan.Parse(startTime);
+        TimeSpan end = TimeSpan.Parse(endTime);
+
+        return (int)(end - start).TotalSeconds;
+    }
 }
