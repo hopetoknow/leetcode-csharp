@@ -23,4 +23,15 @@ public class Solution
 
         return (int)(end - start).TotalSeconds;
     }
+
+    public int SecondsBetweenTimes3(string startTime, string endTime)
+    {
+        return ToSeconds3(endTime) - ToSeconds3(startTime);
+    }
+
+    private int ToSeconds3(string time)
+    {
+        var p = time.Split(':').Select(int.Parse).ToArray();
+        return p[0] * 3600 + p[1] * 60 + p[2];
+    }
 }
