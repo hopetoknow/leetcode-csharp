@@ -34,4 +34,18 @@ public class Solution
         var p = time.Split(':').Select(int.Parse).ToArray();
         return p[0] * 3600 + p[1] * 60 + p[2];
     }
+
+    public int SecondsBetweenTimes4(string startTime, string endTime)
+    {
+        return ToSeconds4(endTime) - ToSeconds4(startTime);
+    }
+
+    private int ToSeconds4(string time)
+    {
+        int h = (time[0] - '0') * 10 + (time[1] - '0');
+        int m = (time[3] - '0') * 10 + (time[4] - '0');
+        int s = (time[6] - '0') * 10 + (time[7] - '0');
+
+        return h * 3600 + m * 60 + s;
+    }
 }
