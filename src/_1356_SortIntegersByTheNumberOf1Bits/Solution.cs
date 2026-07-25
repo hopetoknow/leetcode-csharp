@@ -10,6 +10,24 @@ public class Solution
             .ToArray();
     }
 
+    public int[] SortByBits2(int[] arr)
+    {
+        Array.Sort(arr, (a, b) =>
+        {
+            int bitsA = CountBits(a);
+            int bitsB = CountBits(b);
+
+            if (bitsA != bitsB)
+            {
+                return bitsA - bitsB;
+            }
+
+            return a - b;
+        });
+
+        return arr;
+    }
+
     private int CountBits(int n)
     {
         int count = 0;
