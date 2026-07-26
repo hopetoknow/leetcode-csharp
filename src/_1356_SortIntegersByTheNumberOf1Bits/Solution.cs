@@ -40,4 +40,25 @@ public class Solution
 
         return count;
     }
+
+    public int[] SortByBits3(int[] arr)
+    {
+        return arr
+            .OrderBy(CountBitsKernighan)
+            .ThenBy(n => n)
+            .ToArray();
+    }
+
+    private int CountBitsKernighan(int n)
+    {
+        int count = 0;
+
+        while (n != 0)
+        {
+            n &= n - 1;
+            count++;
+        }
+
+        return count;
+    }
 }
