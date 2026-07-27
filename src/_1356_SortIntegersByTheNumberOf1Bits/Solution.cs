@@ -1,3 +1,5 @@
+using System.Numerics;
+
 namespace _1356_SortIntegersByTheNumberOf1Bits;
 
 public class Solution
@@ -60,5 +62,24 @@ public class Solution
         }
 
         return count;
+    }
+
+    public int[] SortByBits4(int[] arr)
+    {
+        var n = arr.Length;
+
+        for (var i = 0; i < n; i++)
+        {
+            arr[i] += BitOperations.PopCount((uint)arr[i]) * 100000;
+        }
+
+        Array.Sort(arr);
+
+        for (var i = 0; i < n; i++)
+        {
+            arr[i] %= 100000;
+        }
+
+        return arr;
     }
 }
