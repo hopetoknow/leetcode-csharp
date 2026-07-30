@@ -15,4 +15,23 @@ public class Solution
 
         return frequencyByNumber[middle] == 1;
     }
+
+    public bool IsMiddleElementUnique2(int[] nums)
+    {
+        var frequencyByNumber = new Dictionary<int, int>();
+        int middle = nums[nums.Length / 2];
+
+        foreach (int num in nums)
+        {
+            int frequency = frequencyByNumber.GetValueOrDefault(num, 0) + 1;
+            frequencyByNumber[num] = frequency;
+
+            if (num == middle && frequency > 1)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
 }
