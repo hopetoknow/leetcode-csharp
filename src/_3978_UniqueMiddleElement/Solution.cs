@@ -34,4 +34,20 @@ public class Solution
 
         return true;
     }
+
+    public bool IsMiddleElementUnique3(int[] nums)
+    {
+        int middle = nums[nums.Length / 2];
+        var seen = new HashSet<int>();
+
+        foreach (int num in nums)
+        {
+            if (num == middle && !seen.Add(num))
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
 }
