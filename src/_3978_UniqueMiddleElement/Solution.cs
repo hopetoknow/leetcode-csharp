@@ -50,4 +50,20 @@ public class Solution
 
         return true;
     }
+
+    public bool IsMiddleElementUnique4(int[] nums)
+    {
+        var frequencies = new int[101];
+        int middle = nums[nums.Length / 2];
+
+        foreach (int num in nums)
+        {
+            if (num == middle && frequencies[num]++ == 1)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
 }
