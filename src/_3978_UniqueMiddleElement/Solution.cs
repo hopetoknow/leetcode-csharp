@@ -66,4 +66,25 @@ public class Solution
 
         return true;
     }
+
+    public bool IsMiddleElementUnique5(int[] nums)
+    {
+        int middle = nums[nums.Length / 2];
+        bool seenMiddle = false;
+
+        foreach (int num in nums)
+        {
+            if (num == middle)
+            {
+                if (seenMiddle)
+                {
+                    return false;
+                }
+
+                seenMiddle = true;
+            }
+        }
+
+        return true;
+    }
 }
