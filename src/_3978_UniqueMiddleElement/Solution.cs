@@ -103,4 +103,11 @@ public class Solution
 
         return true;
     }
+
+    public bool IsMiddleElementUnique7(int[] nums)
+    {
+        int middle = nums[nums.Length / 2];
+
+        return nums.Count(n => n == middle) == 1;
+    }
 }
