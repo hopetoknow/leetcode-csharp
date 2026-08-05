@@ -110,4 +110,11 @@ public class Solution
 
         return nums.Count(n => n == middle) == 1;
     }
+
+    public bool IsMiddleElementUnique8(int[] nums)
+    {
+        int middle = nums[nums.Length / 2];
+
+        return Array.IndexOf(nums, middle) == Array.LastIndexOf(nums, middle);
+    }
 }
