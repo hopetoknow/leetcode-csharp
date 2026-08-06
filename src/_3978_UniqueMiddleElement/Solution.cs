@@ -117,4 +117,31 @@ public class Solution
 
         return Array.IndexOf(nums, middle) == Array.LastIndexOf(nums, middle);
     }
+
+    public bool IsMiddleElementUnique9(int[] nums)
+    {
+        int middle = nums[nums.Length / 2];
+        int left = 0;
+        int right = nums.Length - 1;
+
+        while (left < right)
+        {
+            if (nums[left] == middle && nums[right] == middle)
+            {
+                return false;
+            }
+
+            if (nums[left] != middle)
+            {
+                left++;
+            }
+
+            if (nums[right] != middle)
+            {
+                right--;
+            }
+        }
+
+        return true;
+    }
 }
