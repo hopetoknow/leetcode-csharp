@@ -23,4 +23,26 @@ public class Solution
 
         return luckies.Count == 0 ? -1 : luckies.Max();
     }
+
+    public int FindLucky2(int[] arr)
+    {
+        var frequencies = new int[501];
+
+        foreach (int num in arr)
+        {
+            frequencies[num]++;
+        }
+
+        int maxLucky = -1;
+
+        for (int i = 1; i < 501; i++)
+        {
+            if (i == frequencies[i] && i > maxLucky)
+            {
+                maxLucky = i;
+            }
+        }
+
+        return maxLucky;
+    }
 }
