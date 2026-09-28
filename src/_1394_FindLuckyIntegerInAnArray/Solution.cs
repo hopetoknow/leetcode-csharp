@@ -45,4 +45,24 @@ public class Solution
 
         return maxLucky;
     }
+
+    public int FindLucky3(int[] arr)
+    {
+        var frequencies = new int[501];
+
+        foreach (int num in arr)
+        {
+            frequencies[num]++;
+        }
+
+        for (int i = 500; i >= 1; i--)
+        {
+            if (i == frequencies[i])
+            {
+                return i;
+            }
+        }
+
+        return -1;
+    }
 }
