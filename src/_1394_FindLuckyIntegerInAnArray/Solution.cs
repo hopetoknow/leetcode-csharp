@@ -65,4 +65,13 @@ public class Solution
 
         return -1;
     }
+
+    public int FindLucky4(int[] arr)
+    {
+        return arr.GroupBy(x => x)
+            .Where(g => g.Key == g.Count())
+            .Select(g => g.Key)
+            .DefaultIfEmpty(-1)
+            .Max();
+    }
 }
