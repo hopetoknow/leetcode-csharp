@@ -19,4 +19,16 @@ public class Solution
 
         return x == 0 && y == 0;
     }
+
+    public bool JudgeCircle2(string moves)
+    {
+        int[] counts = new int[128];
+
+        foreach (char move in moves)
+        {
+            counts[move]++;
+        }
+
+        return counts['U'] == counts['D'] && counts['L'] == counts['R'];
+    }
 }
