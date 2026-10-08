@@ -31,4 +31,10 @@ public class Solution
 
         return counts['U'] == counts['D'] && counts['L'] == counts['R'];
     }
+
+    public bool JudgeCircle3(string moves)
+    {
+        return moves.Count(c => c == 'U') == moves.Count(c => c == 'D')
+               && moves.Count(c => c == 'L') == moves.Count(c => c == 'R');
+    }
 }
