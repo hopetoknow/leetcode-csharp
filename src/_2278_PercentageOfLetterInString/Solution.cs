@@ -14,6 +14,11 @@ public class Solution
             }
         }
 
-        return (int)(100.0 / s.Length * count);
+        return count * 100 / s.Length;
+    }
+
+    public int PercentageLetter2(string s, char letter)
+    {
+        return s.Count(c => c == letter) * 100 / s.Length;
     }
 }
