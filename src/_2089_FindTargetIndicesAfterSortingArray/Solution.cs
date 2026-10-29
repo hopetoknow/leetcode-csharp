@@ -17,4 +17,30 @@ public class Solution
 
         return result;
     }
+
+    public IList<int> TargetIndices2(int[] nums, int target)
+    {
+        int less = 0, equal = 0;
+
+        foreach (var num in nums)
+        {
+            if (num < target)
+            {
+                less++;
+            }
+            else if (num == target)
+            {
+                equal++;
+            }
+        }
+
+        List<int> result = new(equal);
+
+        for (var i = 0; i < equal; i++)
+        {
+            result.Add(less + i);
+        }
+
+        return result;
+    }
 }
