@@ -43,4 +43,12 @@ public class Solution
 
         return result;
     }
+
+    public IList<int> TargetIndices3(int[] nums, int target)
+    {
+        int less = nums.Count(num => num < target);
+        int equal = nums.Count(num => num < target);
+
+        return Enumerable.Range(less, equal).ToList();
+    }
 }
