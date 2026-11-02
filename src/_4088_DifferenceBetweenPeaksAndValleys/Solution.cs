@@ -20,4 +20,14 @@ public class Solution
 
         return peakSum - valleySum;
     }
+
+    public int PeakValleyDifference2(int[] nums)
+    {
+        return Enumerable.Range(1, nums.Length - 2)
+            .Sum(i =>
+                nums[i] > nums[i - 1] && nums[i] > nums[i + 1] ? nums[i] :
+                nums[i] < nums[i - 1] && nums[i] < nums[i + 1] ? -nums[i] :
+                0
+            );
+    }
 }
